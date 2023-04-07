@@ -33,8 +33,8 @@ const EditContact = () => {
         setContact({ name: data.name, email: data.email });
       } catch (error) {}
     };
-    localFetch();
-  }, []);
+    localFetch(id);
+  }, [id]);
 
   return (
     <form onSubmit={submitForm}>

@@ -3,7 +3,7 @@ import "./addContact.css";
 import addOneContact from "../../services/addContactService";
 import { useNavigate } from "react-router-dom";
 
-const AddContact = ({ history }) => {
+const AddContact = () => {
   const navigate = useNavigate();
 
   const [contact, setContact] = useState({ name: "", email: "" });
