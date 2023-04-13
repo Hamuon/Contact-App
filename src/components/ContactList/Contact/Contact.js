@@ -1,14 +1,13 @@
 import userImage from "../../../assets/images/user.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Contact = ({ contact, onDelete }) => {
   const { name, email, id } = contact;
-
   return (
     <div key={id} className="item">
       <div style={{ display: "flex", alignItems: "center" }}>
         <img src={userImage} alt="user" />
-        <Link to={{ pathname: `user/${id}`, state: { contact: contact } }}>
+        <Link to={`user/${id}`} state={{ contact }}>
           <div className="user">
             <p> name : {name}</p>
             <p> email : {email}</p>
@@ -17,7 +16,7 @@ const Contact = ({ contact, onDelete }) => {
       </div>
       <div>
         <Link to={`/edit/${id}`}>
-          <button className='editBtn'>Edit</button>
+          <button className="editBtn">Edit</button>
         </Link>
         <button onClick={() => onDelete(id)}>delete</button>
       </div>
